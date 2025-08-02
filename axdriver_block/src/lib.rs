@@ -9,8 +9,12 @@ pub mod ramdisk;
 #[cfg(feature = "bcm2835-sdhci")]
 pub mod bcm2835sdhci;
 
+#[cfg(feature = "dw-mshc")]
+pub mod dw_mshc;
+
 #[doc(no_inline)]
 pub use axdriver_base::{BaseDriverOps, DevError, DevResult, DeviceType};
+
 
 /// Operations that require a block storage device driver to implement.
 pub trait BlockDriverOps: BaseDriverOps {

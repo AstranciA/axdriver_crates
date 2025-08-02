@@ -28,6 +28,7 @@ pub use self::gpu::VirtIoGpuDev;
 pub use self::net::VirtIoNetDev;
 
 pub use virtio_drivers::transport::pci::bus as pci;
+use virtio_drivers::transport::pci::bus::Command;
 pub use virtio_drivers::transport::{mmio::MmioTransport, pci::PciTransport, Transport};
 pub use virtio_drivers::{BufferDirection, Hal as VirtIoHal, PhysAddr};
 
@@ -64,6 +65,7 @@ pub fn probe_pci_device<H: VirtIoHal>(
     use virtio_drivers::transport::pci::virtio_device_type;
 
     let dev_type = virtio_device_type(dev_info).and_then(as_dev_type)?;
+
     let transport = PciTransport::new::<H>(root, bdf).ok()?;
     Some((dev_type, transport))
 }

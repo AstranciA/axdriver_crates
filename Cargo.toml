@@ -2,12 +2,12 @@
 resolver = "2"
 
 members = [
-    "axdriver_base",
-    "axdriver_block",
-    "axdriver_net",
-    "axdriver_display",
-    "axdriver_pci",
-    "axdriver_virtio",
+  "axdriver_base",
+  "axdriver_block",
+  "axdriver_net",
+  "axdriver_display",
+  "axdriver_pci",
+  "axdriver_virtio",
 ]
 
 [workspace.package]

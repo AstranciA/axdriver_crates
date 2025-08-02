@@ -15,6 +15,8 @@
 
 #![no_std]
 
+extern crate alloc;
+
 /// All supported device types.
 #[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub enum DeviceType {
@@ -59,4 +61,14 @@ pub trait BaseDriverOps: Send + Sync {
 
     /// The type of the device.
     fn device_type(&self) -> DeviceType;
+
+    fn init(&mut self) {}
+
+    fn mmio_base(&self) -> usize {
+        0
+    }
+
+    fn mmio_size(&self) -> usize {
+        0
+    }
 }
