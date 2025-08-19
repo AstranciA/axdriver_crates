@@ -12,6 +12,9 @@ pub mod bcm2835sdhci;
 #[cfg(feature = "dw-mshc")]
 pub mod dw_mshc;
 
+#[cfg(feature = "ahci")]
+pub mod ahci;
+
 #[doc(no_inline)]
 pub use axdriver_base::{BaseDriverOps, DevError, DevResult, DeviceType};
 

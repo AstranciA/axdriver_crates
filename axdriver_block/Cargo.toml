@@ -21,6 +21,11 @@ dw-mshc = [
   "dep:bitfield-struct",
   "dep:byte-slice-cast",
 ]
+ahci = [
+  "dep:axhal",
+  "dep:axmm",
+  "dep:axtask",
+]
 ramdisk = []
 bcm2835-sdhci = []
 default = []
